@@ -1,0 +1,47 @@
+.profile-image img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profile-image{
+  width: 70px;
+  height: 70px;
+}
+
+.header-icon{
+  margin-left: 30px;
+}
+
+.notification-icon{
+  width: 20px;
+  height: 20px;
+  margin-right: 1px;
+  margin-left: 5px;
+}
+
+.notification{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.notification:hover{
+  background-color: rgba(217, 222, 216, 0.4);
+}
+
+.notification-text{
+  font-size: 12px;
+}
+
+.message{
+  text-decoration: none;
+  color: black;
+}
+
+#notification_toggler:hover{
+  background-color: rgba(206, 242, 242, 0.69);
+}
+
+.logo-img{
+  width: 200px;
+  height: auto;
+}

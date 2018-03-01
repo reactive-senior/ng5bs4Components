@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <button class="navbar-toggler navbar-toggler mr-auto" data-toggle="collapse" data-target="#navbar_target">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbar_target" class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown links-menu" *ngFor="let link of links">
+        <!-- <a class="nav-link" routerLink="{{link.routerLink}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="link-icon" src="{{link.displayIcon}}">{{link.displayText}}</a> -->
+        <a *ngIf="link.children.length == 0" class="nav-link" routerLink="{{link.routerLink}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><fa name="{{link.displayIcon}}" class="link-icon"></fa>{{link.displayText}}</a>
+        <a *ngIf="link.children.length > 0" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><fa name="{{link.displayIcon}}" class="link-icon"></fa>{{link.displayText}}</a>
+        <div class="dropdown-menu" *ngIf="link.children.length > 0">
+          <!-- <a routerLink="{{item.route}}" class="dropdown-item" *ngFor="let item of link.children"><img class="link-icon" src="{{item.displayIcon}}">{{item.displayText}}</a> -->
+          <a routerLink="{{item.routerLink}}" class="dropdown-item" *ngFor="let item of link.children"><fa name="{{item.displayIcon}}" class="link-icon"></fa>{{item.displayText}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+

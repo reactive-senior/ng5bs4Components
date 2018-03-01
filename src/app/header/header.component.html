@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-light bg-white sticky-top navbar-expand-md">
+        <a routerLink="/" class="navbar-brand"><img class="logo-img" src="{{ logoUrl }}" alt="My Logo goes here"></a>
+        <button class="navbar-toggler navbar-toggler-right ml-auto" data-toggle="collapse" data-target="#collapse_target">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+          <form class="form-inline ml-auto">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-white"><fa name="search"></fa></span>
+              </div>
+              <input class="form-control" type="text" placeholder="Enter Name or instrument">
+            </div>
+          </form>
+          <a routerLink="advanced_search" class="header-icon">Advanced Search</a>
+          <fa class="header-icon" name="bell" size="lg" data-toggle="modal" data-target="#message_inbox"></fa>
+          <a routerLink="settings">
+            <fa class="header-icon" name="gear" size="lg"></fa>
+          </a>
+          <div class="profile-image header-icon">
+            <img src="{{ profileImage }}" alt="Profile Image goes here">
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="message_inbox" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <fa name="envelope" size="lg" style="margin-right:10px; margin-top:3px;"></fa>
+        <h5 class="modal-title">Message Inbox</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div *ngFor="let message of messageData">
+          <div class="message">
+            <div class="row align-items-center">
+              <div class="col-md-1">
+                <img class="notification-icon" src="{{ message.userImg }}" alt="User Profile Image here">
+              </div>
+              <div class="col-md-11 notification">
+                <div class="row text-center">
+                  <span class="notification-text"><strong>{{ message.msgSubject }}</strong> from <strong>{{ message.userName }}</strong></span><br>
+                </div>
+                <div class="row">
+                  <span class="notification-text">{{ message.msgContent }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Coded with <fa name="heart" size="1px"></fa> by reactiveanna <fa name="github" size="1px"></fa></span>
+      </div>
+
+    </div>
+  </div>
+</div>
